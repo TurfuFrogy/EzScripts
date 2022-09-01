@@ -33,23 +33,35 @@ local homeTab = window:MakeTab({
     PremiumOnly = false
 })
 
+local alreadyExecuted = false
 homeTab:AddButton({
     Name = "Load EzScripts.win!",
     Callback = function()
-        library:MakeNotification({
-            Name = "EzScripts.win",
-            Content = "Loading. This can take some times.",
-            Image = "rbxassetid://10715004387",
-            Time = 5
-        })
-
-        -- if readfile then
-        --     getgenv().Key = readfile("EzScripts.win-key")
-        -- else
-        getgenv().Key = ""
-        -- end
-
-        loadstring(game:HttpGet("https://scripts.luawl.com/12261/EzScripts.lua"))()
+        if not alreadyExecuted then
+            library:MakeNotification({
+                Name = "EzScripts.win",
+                Content = "Loading. This can take some times.",
+                Image = "rbxassetid://10715004387",
+                Time = 5
+            })
+    
+            -- if readfile then
+            --     getgenv().Key = readfile("EzScripts.win-key")
+            -- else
+            getgenv().Key = ""
+            -- end
+    
+            loadstring(game:HttpGet("https://scripts.luawl.com/12261/EzScripts.lua"))()
+    
+            alreadyExecuted = true
+        else
+            library:MakeNotification({
+                Name = "EzScripts.win",
+                Content = "You can only execute EzScripts.win one time.",
+                Image = "rbxassetid://10715004387",
+                Time = 5
+            })
+        end
     end
 })
 
