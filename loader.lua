@@ -7,6 +7,7 @@ until
 --     writefile("EzScripts.win-key", "")
 -- end
 
+local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 local library = loadstring(game:HttpGet(("https://raw.githubusercontent.com/TurfuFrogy/EzScripts/main/ui.lua")))()
 
 library:MakeNotification({
@@ -39,29 +40,38 @@ local alreadyExecuted = false
 homeTab:AddButton({
     Name = "Load EzScripts.win!",
     Callback = function()
-        if not alreadyExecuted then
-            library:MakeNotification({
-                Name = "EzScripts.win",
-                Content = "Loading. This can take some times.",
-                Image = "rbxassetid://10715004387",
-                Time = 5
-            })
+        if table.find({142823291, 8737602449, 8540346411, 8750997647}, game.PlaceId) then
+            if not alreadyExecuted then
+                library:MakeNotification({
+                    Name = "EzScripts.win",
+                    Content = "Loading. This can take some times.",
+                    Image = "rbxassetid://10715004387",
+                    Time = 5
+                })
 
-            alreadyExecuted = true
-    
-            -- if readfile then
-            --     getgenv().Key = readfile("EzScripts.win-key")
-            -- else
-            getgenv().Key = ""
-            -- end
-    
-            loadstring(game:HttpGet("https://scripts.luawl.com/12261/EzScripts.lua"))()
+                alreadyExecuted = true
+        
+                -- if readfile then
+                --     getgenv().Key = readfile("EzScripts.win-key")
+                -- else
+                getgenv().Key = ""
+                -- end
+        
+                loadstring(game:HttpGet("https://scripts.luawl.com/12261/EzScripts.lua"))()
+            else
+                library:MakeNotification({
+                    Name = "EzScripts.win",
+                    Content = "You can only execute EzScripts.win one time.",
+                    Image = "rbxassetid://10715004387",
+                    Time = 5
+                })
+            end
         else
             library:MakeNotification({
-                Name = "EzScripts.win",
-                Content = "You can only execute EzScripts.win one time.",
+                Name = "Unsupported Game",
+                Content = "The game you tried to use EzScripts on is not supported.",
                 Image = "rbxassetid://10715004387",
-                Time = 5
+                Time = 15
             })
         end
     end
@@ -70,7 +80,6 @@ homeTab:AddButton({
 homeTab:AddButton({
     Name = "Join Our Discord Server",
     Callback = function()
-        local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
         if httpRequest then
             library:MakeNotification({
                 Name = "Discord Server",
