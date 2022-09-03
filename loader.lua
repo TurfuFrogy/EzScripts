@@ -68,7 +68,7 @@ homeTab:AddButton({
 })
 
 homeTab:AddButton({
-    Name = "Join Our Discord",
+    Name = "Join Our Discord Server",
     Callback = function()
         local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
         if httpRequest then
