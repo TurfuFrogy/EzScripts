@@ -40,7 +40,7 @@ local alreadyExecuted = false
 homeTab:AddButton({
     Name = "Load EzScripts.win!",
     Callback = function()
-        if table.find({142823291, 8737602449, 8540346411, 8750997647}, game.PlaceId) then
+        if table.find({142823291, 8737602449, 8540346411, 8750997647, 537413528}, game.PlaceId) then
             if not alreadyExecuted then
                 library:MakeNotification({
                     Name = "EzScripts.win",
