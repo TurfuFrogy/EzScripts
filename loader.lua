@@ -34,8 +34,9 @@ local homeTab = window:MakeTab({
     PremiumOnly = false
 })
 
-homeTab:AddParagraph("Important", "If you have any problem, please join our Discord. Before clicking on the button below to load EzScripts, please check that your machine clock is synchronized. Here is a tutorial to do so: https://bit.ly/sync-clock")
+homeTab:AddParagraph("Important", "Before clicking on the button below to load EzScripts, please check that your machine clock is synchronized. Here is a tutorial to do so: https://bit.ly/sync-clock")
 homeTab:AddParagraph("Recommended Executors", "Synapse X, Script-Ware, KRNL, Fluxus, Oxygen U. We cannot guarantee partial/full compatibility of EzScripts if you use another executor.")
+homeTab:AddParagraph("Giveaways", "Several giveaways are going on on our Discord server so don't hesitate to join it with the button below! (Synapse X, 500 Robux)")
 
 local alreadyExecuted = false
 homeTab:AddButton({
