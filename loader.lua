@@ -3,7 +3,7 @@ repeat
 until 
     game:IsLoaded()
 
-local paid = true
+local paid = false
 
 if paid then
     local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
